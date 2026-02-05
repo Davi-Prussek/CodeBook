@@ -1,0 +1,2 @@
+use codeBook;
+show tables;
