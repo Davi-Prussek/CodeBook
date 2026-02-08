@@ -1,12 +1,14 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+export const useColorStore = defineStore('color', () => {
+  const preto = ref('#000000')
+  const branco = ref('#ffffff')
+  function trocarCor() {
+    const preto1 = ref(preto.value);
+    preto.value = branco.value;
+    branco.value = preto1.value;
   }
 
-  return { count, doubleCount, increment }
+  return { preto, branco,trocarCor }
 })

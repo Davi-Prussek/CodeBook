@@ -8,7 +8,5 @@ from .serializers import *
 # Create your views here.
 
 class CodigoViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated]
-    filterset_fields = ['linguagem']
-    def get_queryset(self):
-        return Codigo.objects.filter(usuarios=self.request.user)
+    queryset = Codigo.objects.all()
+    serializer_class = CodigoSerializer
