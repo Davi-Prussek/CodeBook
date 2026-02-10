@@ -2,7 +2,7 @@
 
 > Uma biblioteca digital para organizar e consultar conceitos de programação e estrutura de páginas HTML, estilização com CSS e conceitos JavaScript.
 
-**Atenção**  
+# Atenção  
 Este repositório está em fase de desenvolvimento e funciona como um **protótipo**.  
 Algumas funcionalidades ainda não estão em funcionamento além do frontend estar em uma versão beta.
 
@@ -43,4 +43,5 @@ A ideia é funcionar como uma **biblioteca de referência**, voltada em sua maio
 - Autenticação e criação de usuários
 - Polimento da interface da página
 - Construir toda a comunicação do frontend com o backend
+
 
