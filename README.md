@@ -41,7 +41,8 @@ A ideia é funcionar como uma **biblioteca de referência**, voltada em sua maio
 ## Partes em desenvolvimento
 
 - Autenticação e criação de usuários
-- Polimento da interface da página
+- Polimento da interface das páginas
 - Construir toda a comunicação do frontend com o backend
+
 
 
