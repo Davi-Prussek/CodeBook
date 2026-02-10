@@ -24,6 +24,7 @@ const router = createRouter({
       meta: {
         icon: ['fab', 'html5'],
         color: '#E34F26',
+        shadowColor: 'rgba(227, 79, 38, 0.34)'
       }
     },
     {
@@ -32,7 +33,8 @@ const router = createRouter({
       component: CSS,
       meta: {
         icon: ['fab', 'css3-alt'],
-        color: '#1572B6'
+        color: '#1572B6',
+        shadowColor: 'rgba(21, 114, 182, 0.34)'
       }
     },
     {
@@ -42,6 +44,7 @@ const router = createRouter({
       meta: {
         icon: ['fab', 'square-js'],
         color: '#F7DF1E',
+        shadowColor: 'rgba(247, 223, 30, 0.34)'
       }
     },
   ],

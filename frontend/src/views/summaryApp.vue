@@ -9,9 +9,9 @@ const listaRotas = router.getRoutes()
 <template>
 <div class="body">
     <ul>
-    <li v-for="rota in listaRotas.slice(1,4)" :key="rota.name">
+    <li v-for="rota in listaRotas.slice(1,4)" :key="rota.name" :style="{boxShadow: `0px 0px 15px 10px ${rota.meta.shadowColor}`}">
       <RouterLink :to="rota.path" :style="{color: rota.meta.color}">
-        {{ rota.name }} <font-awesome-icon class="icone" :icon="rota.meta.icon" :style="{ color: rota.meta.color }"/>
+        <p>{{ rota.name }}</p> <font-awesome-icon class="icone" :icon="rota.meta.icon" :style="{ color: rota.meta.color }"/>
       </RouterLink>
     </li>
   </ul>
@@ -19,28 +19,31 @@ const listaRotas = router.getRoutes()
 </template>
 <style scoped>
 .body {
-  margin: 0vw;
-  background-color: black;
   ul {
     margin-top: 20%;
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2vw;
+    gap: 3.5vw;
     li {
       border-radius: 24px;
-      box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.372);
       cursor: pointer;
-      background-color: rgb(0, 0, 0);
+      background-color: #ffffff;
       transition: all ease 0.9s;
       a {
-        padding: 0.5vw;
+        padding-inline: 4vw;
+        padding-top: 1.5vw;
+        padding-bottom: 1vw;
         text-decoration: none;
+        font-size: 2vw;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         .icone {
-          font-size: 5vw;
+          font-size: 7vw;
+        }
+        p {
+          font-size: 2vw;
         }
       }
     }
