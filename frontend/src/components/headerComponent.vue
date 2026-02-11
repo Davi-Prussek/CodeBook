@@ -1,15 +1,7 @@
 <script setup>
-/* import { useColorStore } from '@/stores/counter';
-import { computed } from 'vue';
-const color = useColorStore() */
-
-/* const pretoBranco = computed(() => color.preto)
-const brancoPreto = computed(() => color.branco) */
 </script>
 <template>
-<!-- <button @click="color.trocarCor">Testando pra ver se eu lembro</button> -->
 <div>
-
 </div>
 </template>
 <style scoped>
@@ -25,13 +17,6 @@ div {
   height: 3vw;
   background-color: white;
   z-index: 10;
+  display: none;
 }
-/* button {
-  position: relative;
-  top: 0;
-  border: none;
-  background-color: v-bind(pretoBranco);
-  color: v-bind(brancoPreto);
-  cursor: pointer;
-} */
 </style>

@@ -20,6 +20,7 @@ from biblioteca.views import *
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 
+router.register('Categorias', CategoriaViewSet)
 router.register('Codigos', CodigoViewSet)
 urlpatterns = [
     path('', include(router.urls)), 
