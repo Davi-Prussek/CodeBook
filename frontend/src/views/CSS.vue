@@ -1,10 +1,6 @@
 <script setup>
-import { useRouter } from 'vue-router';
-const router = useRouter()
-const rotaAtual = router.currentRoute.value.name
+import informationComponent from '@/components/informationComponent.vue';
 </script>
 <template>
-<body>
-Aqui vai ter as informações sobre: {{ rotaAtual }} 
-</body>
+<informationComponent/>
 </template>

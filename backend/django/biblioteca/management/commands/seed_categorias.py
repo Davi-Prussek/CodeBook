@@ -25,7 +25,10 @@ categorias = [
     ('Interatividade','Controla comportamento do cursor, seleção de texto e eventos do usuário.','css'),
     ('Responsividade','Adapta o layout para diferentes tamanhos de tela usando media queries e funções responsivas.','css'),
     ('Variáveis CSS','Permite criar valores reutilizáveis dentro do CSS para manter organização e consistência.','css'),
-    
+    ('Pseudo-classes', 'Permite aplicar estilos a elementos com base em seu estado ou posição.', 'css'),
+    ('Pseudo-elementos','selecionam partes do elemento ou criam conteúdo extra.', 'css'),
+    ('outros', "Propriedades diversas que controlam aspectos do comportamento ou apresentação de elementos.",'css'),
+
     ('Sintaxe e Fundamentos', 'Variáveis, tipos de dados, operadores e estrutura básica da linguagem.', 'js'),
     ('Controle de Fluxo', 'Condicionais (if, switch) e estruturas de repetição (for, while).', 'js'),
     ('Funções', 'Declaração de funções, arrow functions, parâmetros e retorno.', 'js'),
