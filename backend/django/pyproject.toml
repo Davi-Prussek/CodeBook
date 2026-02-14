@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "Davi-prussek", email = "davi.mariano.prussek0916@gmail.com"},
 ]
-dependencies = ["django>=4.2.28", "python-decouple>=3.8", "mysqlclient>=2.2.7", "djangorestframework>=3.16.1", "django-filter>=25.1", "gunicorn>=23.0.0"]
+dependencies = ["django>=4.2.28", "python-decouple>=3.8", "mysqlclient>=2.2.7", "djangorestframework>=3.16.1", "django-filter>=25.1", "gunicorn>=23.0.0", "psycopg[binary]>=3.2.13"]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "mit"}
