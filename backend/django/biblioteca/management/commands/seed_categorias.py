@@ -38,7 +38,6 @@ categorias = [
     ('Eventos', 'Interação com o usuário através de eventos como click, input e submit.', 'js'),
     ('Assincronismo', 'Promises, async/await e controle de código assíncrono.', 'js'),
     ('Requisições HTTP', 'Consumo de APIs utilizando fetch e outras técnicas de requisição.', 'js'),
-    ('ES6+', 'Recursos modernos como destructuring, spread, modules e template literals.', 'js'),
     ('Classes e OOP', 'Programação orientada a objetos com classes, herança e encapsulamento.', 'js'),
     ('Módulos', 'Importação e exportação de código para organização do projeto.', 'js'),
     ]

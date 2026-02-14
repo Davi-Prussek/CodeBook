@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import format_html
 
 # Create your models here.
 
@@ -13,12 +14,23 @@ class Categoria(models.Model):
         unique_together = ('nome', 'linguagem')
          
     def __str__(self):
-        return f'{self.nome} - {self.linguagem}'
+        return format_html(
+            'Categoria: {}<br>Linguagem: {}<br>ID: {}',
+            self.nome,
+            self.linguagem,
+            self.id,
+        )
 
 class Codigo(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.TextField()
     modoDeUsar = models.TextField()
-    categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT ,related_name='codigos')
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,related_name='codigos')
     def __str__(self):
-        return f'{self.nome} - {self.categoria}'
+        return format_html(
+            'Código: {}<br>Categoria: {}<br>Linguagem: {}<br>ID: {}',
+            self.nome,
+            self.categoria.nome,
+            self.categoria.linguagem,
+            self.id,
+        )
