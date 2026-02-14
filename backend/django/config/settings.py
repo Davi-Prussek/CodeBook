@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = ['.orender.com']
+ALLOWED_HOSTS = ['.onrender.com']
 DEBUG = config('DEBUG')
 
 
