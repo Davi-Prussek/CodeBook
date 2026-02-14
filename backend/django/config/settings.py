@@ -29,7 +29,7 @@ import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ALLOWED_HOSTS = ['.onrender.com']
-DEBUG = os.environ('DEBUG')
+DEBUG = os.environ.get('DEBUG')
 
 
 # Application definition
