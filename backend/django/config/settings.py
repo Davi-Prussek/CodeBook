@@ -90,7 +90,8 @@ DATABASES = {
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT'),
         'PASSWORD': config('DB_PASSWORD'),
-        'USER': config('DB_USER')   
+        'USER': config('DB_USER'),
+        'OPTIONS': {"sslmode": "require",},
     }
 }
 
