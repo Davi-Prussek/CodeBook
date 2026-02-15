@@ -923,18 +923,37 @@ codigos = [
     ("Node ES module","Ativando ES Modules no Node.","// package.json -> { \"type\": \"module\" }","Módulos","js"),
 ]   
 class Command(BaseCommand):
-    help = 'Deu errado kkkk'
+    help = 'Seed segura com debug'
+
     def handle(self, *args, **kwargs): 
-        for nome, descricao, uso, nome_categoria, linguagem in codigos:
-            categoria = Categoria.objects.get(
-                nome=nome_categoria,
-                linguagem=linguagem
-            )
-            Codigo.objects.get_or_create(
-                nome=nome,
-                categoria=categoria,
-                defaults={
-                    'descricao': descricao,
-                    'modoDeUsar': uso
-                })
-        self.stdout.write(self.style.SUCCESS('Dados registrados!'))
+        for i, (nome, descricao, uso, nome_categoria, linguagem) in enumerate(codigos):
+            try:
+                categoria = Categoria.objects.get(
+                    nome=nome_categoria,
+                    linguagem=linguagem
+                )
+
+                codigo, created = Codigo.objects.get_or_create(
+                    nome=nome,
+                    categoria=categoria,
+                    defaults={
+                        'descricao': descricao,
+                        'modoDeUsar': uso
+                    }
+                )
+
+                if created:
+                    print(f"{i} ✅ Criado: {nome}")
+                else:
+                    print(f"{i} ⚠ Já existia: {nome}")
+
+            except Exception as e:
+                print("\n🚨 ERRO NO ITEM:")
+                print("Index:", i)
+                print("Nome:", nome)
+                print("Categoria:", nome_categoria)
+                print("Linguagem:", linguagem)
+                print("Erro:", e)
+                break
+
+        print("Seed finalizada.")
