@@ -99,10 +99,6 @@ DATABASES = {
     )
 }
 
-DATABASES['default']['OPTIONS'] = {
-    'connect_timeout': 30,
-}
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Password validation
