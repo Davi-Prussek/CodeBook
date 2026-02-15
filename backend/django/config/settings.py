@@ -28,7 +28,9 @@ SECRET_KEY = config('SECRET_KEY')
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ["codebook-k7oo.onrender.com"]
+CORS_ALLOWED_ORIGINS = ["https://codebook-k7oo.onrender.com"]
+
 DEBUG = os.environ.get('DEBUG')
 
 
@@ -87,17 +89,22 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DB_NAME', 'postgres'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT', '5432'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'OPTIONS': {"sslmode": "require",},
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
