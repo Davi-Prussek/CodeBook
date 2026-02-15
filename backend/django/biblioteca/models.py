@@ -22,7 +22,7 @@ class Categoria(models.Model):
         )
 
 class Codigo(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=200)
     descricao = models.TextField()
     modoDeUsar = models.TextField()
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,related_name='codigos')
