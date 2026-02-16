@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'biblioteca',
     'usuarios',
     'rest_framework',
+    'django_filters',
 ]
 
 REST_FRAMEWORK = {
