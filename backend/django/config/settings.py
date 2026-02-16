@@ -28,11 +28,13 @@ SECRET_KEY = config('SECRET_KEY')
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = ["codebook-k7oo.onrender.com"]
+ALLOWED_HOSTS = ["codebook-k7oo.onrender.com", '127.0.0.1']
 CORS_ALLOWED_ORIGINS = ["https://codebook-k7oo.onrender.com"]
 
-DEBUG = os.environ.get('DEBUG')
-
+if os.getenv('RENDER'):
+    DEBUG = os.environ.get('DEBUG') == 'True'
+else:
+    DEBUG = config('DEBUG')
 
 # Application definition
 
@@ -51,7 +53,9 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS':[
         'django_filters.rest_framework.DjangoFilterBackend',
-    ]
+    ],
+     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 1000 
 }
 
 MIDDLEWARE = [
@@ -91,15 +95,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 import dj_database_url
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"), 
-        conn_max_age=600,
-        ssl_require=True,
-    )
-}
+if os.getenv('RENDER'):
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get("DATABASE_URL"), 
+            conn_max_age=600,
+            ssl_require=True,)}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': config('DB_NAME'),
+            'HOST': config('DB_HOST'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'PORT': config('DB_PORT'),
+            'USER': config('DB_USER'),
+        }
+    }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+""" STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' """
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
