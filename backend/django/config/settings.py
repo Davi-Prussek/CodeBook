@@ -28,13 +28,15 @@ SECRET_KEY = config('SECRET_KEY')
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = ["codebook-k7oo.onrender.com", '127.0.0.1']
-CORS_ALLOWED_ORIGINS = ["https://codebook-k7oo.onrender.com"]
+ALLOWED_HOSTS = ['']
+CORS_ALLOWED_ORIGINS = ["https://codebook-k7oo.onrender.com", 'https://codebook-frontend.onrender.com/']
 
 if os.getenv('RENDER'):
     DEBUG = os.environ.get('DEBUG') == 'True'
 else:
     DEBUG = config('DEBUG')
+
+
 
 # Application definition
 
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'usuarios',
     'rest_framework',
     'django_filters',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -60,6 +63,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
