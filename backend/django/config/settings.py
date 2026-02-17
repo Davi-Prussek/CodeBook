@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 if os.getenv('RENDER'):
