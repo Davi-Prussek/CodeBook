@@ -9,8 +9,7 @@ const categorias = ref([]);
 
 onMounted(async () => {
 const response = await axios.get(`https://codebook-k7oo.onrender.com/categorias/`)
-categorias.value = response.data.results;
-console.log(response.data)
+categorias.value = response.data;
 });
 </script>
 <template>
