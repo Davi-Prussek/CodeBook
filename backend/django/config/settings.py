@@ -29,7 +29,7 @@ import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ALLOWED_HOSTS = ['']
-CORS_ALLOWED_ORIGINS = ["https://codebook-k7oo.onrender.com", 'https://codebook-frontend.onrender.com/']
+CORS_ALLOW_ALL_ORIGINS = True
 
 if os.getenv('RENDER'):
     DEBUG = os.environ.get('DEBUG') == 'True'
