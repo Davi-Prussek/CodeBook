@@ -12,13 +12,13 @@ import { RouterLink } from 'vue-router';
   padding: 0;
 } */
 div {
-  border-bottom: 2px solid black;
+  border-bottom: 0.5px solid rgb(184, 184, 184);
   position: fixed;
   top: 0;
   width: 100%;
-  height: 3vw;
   background-color: white;
   z-index: 10;
+  padding: 0.3vw;
   a {
     text-decoration: none;
     font-size: 2.6vw;
