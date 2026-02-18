@@ -5,7 +5,7 @@ from .models import Codigo, Categoria
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categoria
-        fields = ['id', 'nome', 'linguagem']
+        fields = ['id', 'nome', 'linguagem', 'descricao']
 
 
 class CodigoSerializer(serializers.ModelSerializer):
