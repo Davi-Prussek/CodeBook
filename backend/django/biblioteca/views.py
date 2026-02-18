@@ -16,4 +16,4 @@ class CodigoViewSet(ModelViewSet):
     queryset = Codigo.objects.all()
     serializer_class = CodigoSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['categoria', 'categoria__linguagem']
+    filterset_fields = ['categoria', 'categoria__linguagem', 'id']
