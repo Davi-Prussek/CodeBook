@@ -1,12 +1,22 @@
-from rest_framework.serializers import ModelSerializer
-from .models import *
+from rest_framework import serializers
+from .models import Codigo, Categoria
 
-class CategoriaSerializer(ModelSerializer):
+
+class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categoria
-        fields = '__all__'
+        fields = ['id', 'nome', 'linguagem']
 
-class CodigoSerializer(ModelSerializer):
+
+class CodigoSerializer(serializers.ModelSerializer):
+    categoria = CategoriaSerializer(read_only=True)
+
     class Meta:
         model = Codigo
-        fields = "__all__"
+        fields = [
+            'id',
+            'nome',
+            'descricao',
+            'modoDeUsar',
+            'categoria',
+        ]
